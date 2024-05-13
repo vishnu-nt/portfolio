@@ -1,4 +1,4 @@
-![](./public/image/screen.png)
+![screen](https://github.com/vishnu-nt/portfolio/assets/22218316/579cfc1a-5354-4297-8beb-27b8b2dfc415)
 
 ## View live preview [here](https://abusaid.netlify.app/).
 
