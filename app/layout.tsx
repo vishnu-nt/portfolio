@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/navbar';
 import './css/card.scss';
 import './css/globals.scss';
+import { ReactNode } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -15,7 +16,8 @@ export const metadata = {
   improves data retrieval and workflow efficiencies.`,
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM;
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -25,7 +27,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
       </body>
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      {gtmId && <GoogleTagManager gtmId={gtmId} />}
     </html>
   )
 };

@@ -1,8 +1,8 @@
 "use client";
-// @flow strict
+
 import { isValidEmail } from '@/utils/check-email';
 import emailjs from '@emailjs/browser';
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { TbMailForward } from "react-icons/tb";
 import { toast } from 'react-toastify';
 
@@ -23,19 +23,18 @@ function ContactWithoutCaptcha() {
     }
   };
 
-  const handleSendMail = async (e) => {
+  const handleSendMail = async (e: MouseEvent) => {
     e.preventDefault();
     if (!input.email || !input.message || !input.name) {
       setError({ ...error, required: true });
       return;
-    } else if (error.email) {
+    } if (error.email) {
       return;
-    } else {
-      setError({ ...error, required: false });
-    };
+    } 
+    setError({ ...error, required: false });
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
 
     try {
@@ -49,7 +48,7 @@ function ContactWithoutCaptcha() {
           message: '',
         });
       };
-    } catch (error) {
+    } catch (error: any) {
       toast.error(error?.text || error);
     };
   };
@@ -69,7 +68,7 @@ function ContactWithoutCaptcha() {
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
               type="text"
-              maxLength="100"
+              maxLength={100}
               required={true}
               onChange={(e) => setInput({ ...input, name: e.target.value })}
               onBlur={checkRequired}
@@ -82,7 +81,7 @@ function ContactWithoutCaptcha() {
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
               type="email"
-              maxLength="100"
+              maxLength={100}
               required={true}
               value={input.email}
               onChange={(e) => setInput({ ...input, email: e.target.value })}
@@ -100,12 +99,12 @@ function ContactWithoutCaptcha() {
             <label className="text-base">Your Message: </label>
             <textarea
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              maxLength="500"
+              maxLength={500}
               name="message"
               required={true}
               onChange={(e) => setInput({ ...input, message: e.target.value })}
               onBlur={checkRequired}
-              rows="4"
+              rows={4}
               value={input.message}
             />
           </div>

@@ -1,9 +1,9 @@
 "use client";
-// @flow strict
+
 import { isValidEmail } from '@/utils/check-email';
 import emailjs from '@emailjs/browser';
 import axios from 'axios';
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { TbMailForward } from "react-icons/tb";
 import { toast } from 'react-toastify';
@@ -14,7 +14,7 @@ function ContactWithCaptcha() {
     email: '',
     message: '',
   });
-  const [captcha, setCaptcha] = useState(null);
+  const [captcha, setCaptcha] = useState<string | null>(null);
   const [error, setError] = useState({
     email: false,
     required: false,
@@ -26,7 +26,7 @@ function ContactWithCaptcha() {
     }
   };
 
-  const handleSendMail = async (e) => {
+  const handleSendMail: MouseEventHandler<HTMLButtonElement> = async (e) => {
     if (!captcha) {
       toast.error('Please complete the captcha!');
       return;
@@ -52,8 +52,8 @@ function ContactWithCaptcha() {
       setError({ ...error, required: false });
     };
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const options = { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY };
 
     try {
@@ -67,7 +67,7 @@ function ContactWithCaptcha() {
           message: '',
         });
       };
-    } catch (error) {
+    } catch (error: any) {
       toast.error(error?.text || error);
     };
   };
@@ -87,7 +87,7 @@ function ContactWithCaptcha() {
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
               type="text"
-              maxLength="100"
+              maxLength={100}
               required={true}
               onChange={(e) => setInput({ ...input, name: e.target.value })}
               onBlur={checkRequired}
@@ -100,7 +100,7 @@ function ContactWithCaptcha() {
             <input
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
               type="email"
-              maxLength="100"
+              maxLength={100}
               required={true}
               value={input.email}
               onChange={(e) => setInput({ ...input, email: e.target.value })}
@@ -118,17 +118,17 @@ function ContactWithCaptcha() {
             <label className="text-base">Your Message: </label>
             <textarea
               className="bg-[#10172d] w-full border rounded-md border-[#353a52] focus:border-[#16f2b3] ring-0 outline-0 transition-all duration-300 px-3 py-2"
-              maxLength="500"
+              maxLength={500}
               name="message"
               required={true}
               onChange={(e) => setInput({ ...input, message: e.target.value })}
               onBlur={checkRequired}
-              rows="4"
+              rows={4}
               value={input.message}
             />
           </div>
           <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             onChange={(code) => setCaptcha(code)}
           />
           <div className="flex flex-col items-center gap-2">

@@ -1,8 +1,9 @@
-// @flow strict
-
 import * as React from 'react';
+import { projectsData } from '@/utils/data/projects-data';
 
-function ProjectCard({ project }) {
+type Project = typeof projectsData[number];
+
+function ProjectCard({ project }: { project: Project }) {
 
   return (
     <div className="from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37] w-full">

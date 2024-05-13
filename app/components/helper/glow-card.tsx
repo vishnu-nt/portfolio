@@ -1,7 +1,8 @@
+// @ts-nocheck
 "use client"
-import { useEffect } from 'react';
+import { ReactNode, useEffect } from 'react';
 
-const GlowCard = ({ children , identifier}) => {
+const GlowCard = ({ children , identifier}: { children: ReactNode; identifier: string }) => {
   useEffect(() => {
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
