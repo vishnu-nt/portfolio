@@ -16,7 +16,7 @@ const GlowCard = ({ children , identifier}: { children: ReactNode; identifier: s
       opacity: 0,
     };
 
-    const UPDATE = (event) => {
+    const update = (event) => {
       for (const CARD of CARDS) {
         const CARD_BOUNDS = CARD.getBoundingClientRect();
 
@@ -47,9 +47,9 @@ const GlowCard = ({ children , identifier}: { children: ReactNode; identifier: s
       }
     };
 
-    document.body.addEventListener('pointermove', UPDATE);
+    document.body.addEventListener('pointermove', update);
 
-    const RESTYLE = () => {
+    const restyle = () => {
       CONTAINER.style.setProperty('--gap', CONFIG.gap);
       CONTAINER.style.setProperty('--blur', CONFIG.blur);
       CONTAINER.style.setProperty('--spread', CONFIG.spread);
@@ -59,12 +59,12 @@ const GlowCard = ({ children , identifier}: { children: ReactNode; identifier: s
       );
     };
 
-    RESTYLE();
-    UPDATE();
+    restyle();
+    update();
 
     // Cleanup event listener
     return () => {
-      document.body.removeEventListener('pointermove', UPDATE);
+      document.body.removeEventListener('pointermove', update);
     };
   }, [identifier]);
 
