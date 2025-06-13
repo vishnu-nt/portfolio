@@ -13,5 +13,5 @@ export const personalData = {
   linkedIn: 'https://linkedin.com/in/vishnu-nt',
   stackOverflow: 'https://stackoverflow.com/users/7014483/vishnu',
   devUsername: "vishnu-nt",
-  resume: "https://drive.google.com/file/d/1jBI52XrNnveaZnRp-d9kGOJFc0LahVhE/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1HBYx1I03gHzlHiLFxBLQeBegQAkiLnps/view?usp=sharing"
 }
