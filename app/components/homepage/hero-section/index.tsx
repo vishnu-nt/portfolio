@@ -1,6 +1,8 @@
 import { personalData } from "@/utils/data/personal-data";
+import { skillsData } from "@/utils/data/skills";
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { FaStackOverflow } from "react-icons/fa";
 import { MdAlternateEmail, MdDownload } from "react-icons/md";
@@ -106,30 +108,16 @@ function HeroSection() {
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">React</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NextJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Redux</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">GraphQL</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">VueJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Express</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Tailwind</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">HTML&CSS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Typescript</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Javascript</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Material UI</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">RTK and React Query</span>
-                <span className="text-gray-400">{"'],"}</span>
+                {skillsData.map((skill, i) => (
+                  <Fragment key={i}>
+                  <span className="text-amber-300">{skill}</span>
+                  {i === skillsData.length - 1 ? (
+                     <span className="text-gray-400">{"'],"}</span>
+                  ) : 
+                  <span className="text-gray-400">{"', '"}</span>
+                  }
+                  </Fragment>
+                ))}
               </div>
               {/* <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">hardWorker:</span>

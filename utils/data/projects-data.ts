@@ -44,6 +44,16 @@ export const projectsData = [
         demo: 'https://www.foodluv.io/',
         image: realEstate,
     },
+    {
+        id: 5,
+        name: 'Mercanis',
+        description: 'Mercanis seeks to unleash the power of digital procurement byelevating the sourcing process and offering a holistic approach to managing supplier activities in an intuitive SRM.',
+        tools: ['Svelte', 'TypeScript', 'Tailwind', 'NodeJS',],
+        code: '',
+        role: 'Senior Frontend Engineer',
+        demo: 'https://www.mercanis.com/',
+        image: realEstate,
+    },
 ];
 
 

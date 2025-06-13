@@ -8,7 +8,7 @@ export const personalData = {
   enhance data retrieval and streamline workflows`,
   email: 'vishnu.nt@outlook.com',
   address: 'India (GMT+05:30)',
-  phone: '+917907917882',
+  phone: '+919895975522',
   github: 'https://github.com/vishnu-nt',
   linkedIn: 'https://linkedin.com/in/vishnu-nt',
   stackOverflow: 'https://stackoverflow.com/users/7014483/vishnu',

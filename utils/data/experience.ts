@@ -2,14 +2,14 @@ export const experiences = [
   {
     id: 1,
     title: 'Senior Frontend Engineer',
-    company: "Heals Healthcare",
-    duration: "(Nov 2021 - Present)"
+    company: "Mercanis",
+    duration: "(July 2024 - Present)"
   },
   {
     id: 2,
-    title: "Frontend Engineer",
-    company: "Klinify",
-    duration: "(Nov 2019 - Nov 2021)"
+    title: 'Senior Frontend Engineer',
+    company: "Heals Healthcare (Formerly Klinify)",
+    duration: "(Nov 2019 - May 2024)"
   },
   {
     id: 3,
