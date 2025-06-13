@@ -73,6 +73,7 @@ import webix from '/public/svg/skills/webix.svg';
 import wolframalpha from '/public/svg/skills/wolframalpha.svg';
 import wordpress from '/public/svg/skills/wordpress.svg';
 import nodejs from '/public/svg/skills/node.jpg';
+import redux from '/public/png/redux.svg';
 
 
 export const skillsImage = (skill: string) => {
@@ -106,6 +107,8 @@ export const skillsImage = (skill: string) => {
       return react;
     case 'svelte':
       return svelte;
+    case 'redux':
+      return redux;
     case 'typescript':
       return typescript;
     case 'vue':
