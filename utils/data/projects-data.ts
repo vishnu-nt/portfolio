@@ -1,61 +1,119 @@
-import ayla from '/public/image/ayla.jpg';
-import crefin from '/public/image/crefin.jpg';
-import realEstate from '/public/image/real-estate.jpg';
-import travel from '/public/image/travel.jpg';
+import ayla from "/public/image/ayla.jpg";
+import crefin from "/public/image/crefin.jpg";
+import realEstate from "/public/image/real-estate.jpg";
+import travel from "/public/image/travel.jpg";
 
 export const projectsData = [
-    {
-        id: 1,
-        name: 'Clinic Management system - Klinify',
-        description: "Klinify has been providing world-class digital solutions for over 7 years to help clinics around the region to manage their clinical operations in a seamless and hassle-free way. We’re now focused on supporting clinics in Malaysia, with over 1,200 doctors and 350 clinics actively using our system.",
-        tools: ['React', 'Flow', 'PouchDB', 'Typescript', 'Styled components', 'NodeJS'],
-        role: 'Frontend Developer',
-        code: '',
-        demo: 'https://www.klinify.com/',
-        image: crefin,
-    },
-    {
-        id: 2,
-        name: 'CMS for insurers & health providers',
-        description: 'Heals Healthcare (Asia) is headquartered in Hong Kong where Heals is the leading market provider of CMS to about 3,000 clinic users, the Heals cloud-based platform extends to connecting health providers, insurers/ medical scheme payors, e-pharmacy distributors and medication delivery partners.',
-        tools: ['Tailwind CSS', "VueJS", "TypeScript", "GraphQL", "NodeJS", "Agora"],
-        role: 'Frontend Engineer',
-        code: '',
-        demo: '',
-        image: travel,
-    },
-    {
-        id: 3,
-        name: 'Heals Clinic',
-        description: 'Heals Clinic is fully dedicated to virtual care. Designed with online consultation and care in mind. Outcome: a different patient experience.',
-        tools: ['NextJS', 'Tailwind CSS', "ReactJS", "VueJS", "TypeScript", "GraphQL", "NodeJS", "Agora"],
-        role: 'Lead Frontend Engineer',
-        code: '',
-        demo: 'https://www.heals.asia/',
-        image: travel,
-    },
-    {
-        id: 4,
-        name: 'Foodluv',
-        description: 'A solution built to empower restaurants with a symphony of products working in harmony. From online orders and delivery to on-premises customers, and our state-of-the-art expo/kitchen display system, FoodLuv has it all. Zero commissions, zero transaction fees, and zero reliance on third parties.',
-        tools: ['ReactJS', 'NextJS', 'SCSS', 'Stripe', 'Express', 'TypeScript', 'Material UI', 'SocketIO',],
-        code: '',
-        role: 'Frontend Engineer',
-        demo: 'https://www.foodluv.io/',
-        image: realEstate,
-    },
-    {
-        id: 5,
-        name: 'Mercanis',
-        description: 'Mercanis seeks to unleash the power of digital procurement byelevating the sourcing process and offering a holistic approach to managing supplier activities in an intuitive SRM.',
-        tools: ['Svelte', 'TypeScript', 'Tailwind', 'NodeJS',],
-        code: '',
-        role: 'Senior Frontend Engineer',
-        demo: 'https://www.mercanis.com/',
-        image: realEstate,
-    },
+  {
+    id: 1,
+    name: "Clinic Management system - Klinify",
+    description:
+      "Klinify has been providing world-class digital solutions for over 7 years to help clinics around the region to manage their clinical operations in a seamless and hassle-free way. We’re now focused on supporting clinics in Malaysia, with over 1,200 doctors and 350 clinics actively using our system.",
+    tools: [
+      "React",
+      "Flow",
+      "PouchDB",
+      "Typescript",
+      "Styled components",
+      "NodeJS",
+    ],
+    role: "Frontend Developer",
+    code: "",
+    demo: "https://www.klinify.com/",
+    image: crefin,
+  },
+  {
+    id: 2,
+    name: "CMS for insurers & health providers",
+    description:
+      "Heals Healthcare (Asia) is headquartered in Hong Kong where Heals is the leading market provider of CMS to about 3,000 clinic users, the Heals cloud-based platform extends to connecting health providers, insurers/ medical scheme payors, e-pharmacy distributors and medication delivery partners.",
+    tools: [
+      "Tailwind CSS",
+      "VueJS",
+      "TypeScript",
+      "GraphQL",
+      "NodeJS",
+      "Agora",
+    ],
+    role: "Frontend Engineer",
+    code: "",
+    demo: "",
+    image: travel,
+  },
+  {
+    id: 3,
+    name: "Heals Clinic",
+    description:
+      "Heals Clinic is fully dedicated to virtual care. Designed with online consultation and care in mind. Outcome: a different patient experience.",
+    tools: [
+      "NextJS",
+      "Tailwind CSS",
+      "ReactJS",
+      "VueJS",
+      "TypeScript",
+      "GraphQL",
+      "NodeJS",
+      "Agora",
+    ],
+    role: "Lead Frontend Engineer",
+    code: "",
+    demo: "https://www.heals.asia/",
+    image: travel,
+  },
+  {
+    id: 4,
+    name: "Foodluv",
+    description:
+      "A solution built to empower restaurants with a symphony of products working in harmony. From online orders and delivery to on-premises customers, and our state-of-the-art expo/kitchen display system, FoodLuv has it all. Zero commissions, zero transaction fees, and zero reliance on third parties.",
+    tools: [
+      "ReactJS",
+      "NextJS",
+      "SCSS",
+      "Stripe",
+      "Express",
+      "TypeScript",
+      "Material UI",
+      "SocketIO",
+    ],
+    code: "",
+    role: "Frontend Engineer",
+    demo: "https://www.foodluv.io/",
+    image: realEstate,
+  },
+  {
+    id: 5,
+    name: "Mercanis",
+    description:
+      "Mercanis seeks to unleash the power of digital procurement byelevating the sourcing process and offering a holistic approach to managing supplier activities in an intuitive SRM.",
+    tools: ["Svelte", "TypeScript", "Tailwind", "NodeJS"],
+    code: "",
+    role: "Senior Frontend Engineer",
+    demo: "https://www.mercanis.com/",
+    image: realEstate,
+  },
+  {
+    id: 6,
+    name: "Reality AI",
+    description:
+      "Platform to explore sensor data that enables engineers to find the best sensor or combination of sensors solutions for industrial, automotive and commercial applications.",
+    tools: ["React", "TypeScript", "Tailwind", "NodeJS"],
+    code: "",
+    role: "Senior Frontend Engineer",
+    demo: "https://www.renesas.com/en/software-tool/reality-ai-tools",
+    image: realEstate,
+  },
+  {
+    id: 7,
+    name: "Frame Siftr",
+    description:
+      "A lightning-fast, privacy-first photo selector that runs entirely in your browser. Organize massive shoots instantly without uploading a single byte",
+    tools: ["React", "TypeScript", "Tailwind"],
+    code: "",
+    role: "Product Engineer",
+    demo: "https://framesiftr.netlify.app/",
+    image: realEstate,
+  },
 ];
-
 
 // Do not remove any property.
 // Leave it blank instead as shown below
