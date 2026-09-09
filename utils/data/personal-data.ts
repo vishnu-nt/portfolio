@@ -3,7 +3,7 @@ export const personalData = {
   profile: "/profile.jpg",
   designation: "Senior Frontend Engineer",
   title:
-    "I build fast, accessible interfaces for data-heavy and real-time products — from 16,000+ record virtualization in healthtech to industrial sensor visualization.",
+    "I build fast, accessible interfaces for data-heavy and real-time products — from large-scale record virtualization in healthtech to industrial sensor visualization.",
   description: `Senior Frontend Engineer with 9+ years building production-scale web applications across healthcare,
 procurement, and industrial AI. Specialises in React, Svelte, and TypeScript — with a track record of
 owning frontend architecture end-to-end, leading migrations, and delivering measurable performance

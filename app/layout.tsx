@@ -9,11 +9,10 @@ import { ReactNode } from 'react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Portfolio of Vishnu - Frontend Engineer',
-  description: `Frontend developer with 7 years of experience in
-  building responsive web apps. Proficient with CSS and JS
-  Frameworks. Proven ability in optimizing web functionality that
-  improves data retrieval and workflow efficiencies.`,
+  title: 'Portfolio of Vishnu - Senior Frontend Engineer',
+  description: `Senior Frontend Engineer with 9+ years building production-scale
+  web apps across healthcare, procurement, and industrial AI. Specialises in
+  React, Svelte, and TypeScript.`,
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

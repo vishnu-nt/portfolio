@@ -1,16 +1,16 @@
 "use client";
 
-import { isValidEmail } from '@/utils/check-email';
-import emailjs from '@emailjs/browser';
-import { MouseEvent, useState } from 'react';
+import { isValidEmail } from "@/utils/check-email";
+import emailjs from "@emailjs/browser";
+import { MouseEvent, useState } from "react";
 import { TbMailForward } from "react-icons/tb";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function ContactWithoutCaptcha() {
   const [input, setInput] = useState({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    message: "",
   });
   const [error, setError] = useState({
     email: false,
@@ -28,9 +28,10 @@ function ContactWithoutCaptcha() {
     if (!input.email || !input.message || !input.name) {
       setError({ ...error, required: true });
       return;
-    } if (error.email) {
+    }
+    if (error.email) {
       return;
-    } 
+    }
     setError({ ...error, required: false });
 
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
@@ -41,26 +42,28 @@ function ContactWithoutCaptcha() {
       const res = await emailjs.send(serviceID, templateID, input, options);
 
       if (res.status === 200) {
-        toast.success('Message sent successfully!');
+        toast.success("Message sent successfully!");
         setInput({
-          name: '',
-          email: '',
-          message: '',
+          name: "",
+          email: "",
+          message: "",
         });
-      };
+      }
     } catch (error: any) {
       toast.error(error?.text || error);
-    };
+    }
   };
 
   return (
     <div className="">
       <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-        Contact with me
+        Contact me
       </p>
       <div className="max-w-3xl text-white rounded-lg border border-[#464c6a] p-3 lg:p-5">
         <p className="text-sm text-[#d3d8e8]">
-          {"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}
+          {
+            "Have a question or an opportunity in mind? I'm always open to work that matches my skills and interests - feel free to reach out."
+          }
         </p>
         <div className="mt-6 flex flex-col gap-4">
           <div className="flex flex-col gap-2">
@@ -90,9 +93,11 @@ function ContactWithoutCaptcha() {
                 setError({ ...error, email: !isValidEmail(input.email) });
               }}
             />
-            {error.email &&
-              <p className="text-sm text-red-400">Please provide a valid email!</p>
-            }
+            {error.email && (
+              <p className="text-sm text-red-400">
+                Please provide a valid email!
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col gap-2">
@@ -109,11 +114,11 @@ function ContactWithoutCaptcha() {
             />
           </div>
           <div className="flex flex-col items-center gap-2">
-            {error.required &&
+            {error.required && (
               <p className="text-sm text-red-400">
                 Email and Message are required!
               </p>
-            }
+            )}
             <button
               className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
               role="button"
@@ -127,6 +132,6 @@ function ContactWithoutCaptcha() {
       </div>
     </div>
   );
-};
+}
 
 export default ContactWithoutCaptcha;
